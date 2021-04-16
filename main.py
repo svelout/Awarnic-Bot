@@ -361,7 +361,9 @@ async def on_raw_reaction_remove(payload):
             role = discord.utils.get(guild.roles, id=767459216323117077)
         elif emoji == '🇧':
             role = discord.utils.get(guild.roles, id=767459217920622692)
-        await member.remove_roles(role)
+        member = await(guild.fetch_member(payload.user_id))
+        if member is not None:
+            await member.remove_roles(role)
 
 
 
