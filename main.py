@@ -299,9 +299,7 @@ async def on_raw_reaction_remove(payload):
             await member.remove_roles(role)
 
     if message3 == payload.message_id:
-        member = payload.member
-        guild = member.guild
-
+        guild = await(bot.fetch_guild(payload.guild_id))
         emoji = payload.emoji.name
         if emoji == '🇦':
              role = discord.utils.get(guild.roles, id=767458116446322689)
