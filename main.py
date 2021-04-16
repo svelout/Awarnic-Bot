@@ -133,7 +133,11 @@ async def on_member_join(ctx):
     role3 = discord.utils.get(ctx.guild.roles, id=767457057619443762)
     role4 = discord.utils.get(ctx.guild.roles, id=767457174657695776)
     role5 = discord.utils.get(ctx.guild.roles, id=767456824520605767)
-    await ctx.add_roles(role1, role2, role3, role4, role5)
+    await ctx.add_roles(role1)
+    await ctx.add_roles(role2)
+    await ctx.add_roles(role3)
+    await ctx.add_roles(role4)
+    await ctx.add_roles(role5)
     await ctx.send(f"Привет! Добро пожаловать на сервер {guild.name}\n Здесь ты можешь найти новых друзей и просто приятно провести время\n Не забудь прочитать правила!\n **Удачи!**")
 
 @bot.event
