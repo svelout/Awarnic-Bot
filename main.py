@@ -247,6 +247,7 @@ async def on_raw_reaction_add(payload):
             role = discord.utils.get(guild.roles, id=767459216323117077)
         elif emoji == '🇧':
             role = discord.utils.get(guild.roles, id=767459217920622692)
+        await member.add_roles(role)
 
 
 @bot.event
@@ -360,6 +361,7 @@ async def on_raw_reaction_remove(payload):
             role = discord.utils.get(guild.roles, id=767459216323117077)
         elif emoji == '🇧':
             role = discord.utils.get(guild.roles, id=767459217920622692)
+        await member.remove_roles(role)
 
 
 
