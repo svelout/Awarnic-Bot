@@ -28,7 +28,7 @@ async def on_message(ctx):
     #Channel = discord.utils.get(ctx.guild.channels, id=831949714236244069)
     #Text = "YOUR_MESSAGE_HERE"
     Moji = await ctx.send(embed=embed)
-    Moj = discord.utils.get(ctx.guild.emojies, id=767357702837764116)
+    Moj = discord.utils.get(ctx.guild.emojis, id=767357702837764116)
     Moj2 = "🇧"#
     Moj3 = "🇨"#
     Moj4 = "🇩"#
