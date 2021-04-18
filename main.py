@@ -205,11 +205,11 @@ async def on_raw_reaction_add(payload):
     Moja5 = '🟠'
     Mojp = '🧍‍♀️'
     Mojp2 = '🧍‍♂️'
-    message1 = 833386500334026773
-    message2 = 833386515790954529
-    message3 = 833386533343592458
-    message4 = 833386564468867122
-    message5 = 833386606777204736
+    message1 = 833393450963042344
+    message2 = 833393461709111326
+    message3 = 833393473272283146
+    message4 = 833393490955599872
+    message5 = 833393519544500224
 
     if message1 == payload.message_id:
         member = payload.member
@@ -354,11 +354,11 @@ async def on_raw_reaction_remove(payload):
     Moja5 = '🟠'
     Mojp = '🧍‍♀️'
     Mojp2 = '🧍‍♂️'
-    message1 = 833386500334026773
-    message2 = 833386515790954529
-    message3 = 833386533343592458
-    message4 = 833386564468867122
-    message5 = 833386606777204736
+    message1 = 833393450963042344
+    message2 = 833393461709111326
+    message3 = 833393473272283146
+    message4 = 833393490955599872
+    message5 = 833393519544500224
 
     if message1 == payload.message_id:
         member = payload.member
