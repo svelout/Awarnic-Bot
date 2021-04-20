@@ -1,4 +1,6 @@
+from typing import Optional
 import discord
+import regcheck
 from discord.ext import commands
 from discord.ext.commands import Bot
 
@@ -12,7 +14,13 @@ colours = {
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.watching, name=f"на участников"))
+    guild = discord.Guild
+    servers = len(bot.guilds)
+    members = 0
+    for guild in bot.guilds:
+        members += guild.member_count - 1
+
+    await bot.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.watching, name=str(f"на {members} участника")))
     print("Бот начал работать")
 
 @bot.command(name='test')
@@ -151,24 +159,16 @@ async def on_message(ctx):
     await Moji5.add_reaction(Mojp2)
 
 
-
-
 @bot.event
 async def on_member_join(ctx):
-    guild = ctx.guild
-    role1 = discord.utils.get(ctx.guild.roles, id=767454985390391306)
-    role2 = discord.utils.get(ctx.guild.roles, id=767457027546939393)
-    role3 = discord.utils.get(ctx.guild.roles, id=767457057619443762)
-    role4 = discord.utils.get(ctx.guild.roles, id=767457174657695776)
-    role5 = discord.utils.get(ctx.guild.roles, id=767456824520605767)
-    await ctx.add_roles(role1)
-    await ctx.add_roles(role2)
-    await ctx.add_roles(role3)
-    await ctx.add_roles(role4)
-    await ctx.add_roles(role5)
-    await ctx.send(f"Привет! Добро пожаловать на сервер {guild.name}\n Здесь ты можешь найти новых друзей и просто приятно провести время\n Не забудь прочитать правила!\n **Удачи!**")
+    owner = bot.get_user(417714443884167177)
+    user = discord.Member
+    if not user.bot:
+        await ctx.send(f"Добро пожаловать на сервер {user.name}!")
+    else:
+        await ctx.ban()
+        await owner.send(f"Внимание, на ваш сервер был добавлен бо под именем {user.name}\n Из-за этого сработала система безопасности `bramerto_Anti-Crash\n Продолжайте, следить за сервером, в любой ситуации я вам помогу")
 
-@bot.event
 async def on_raw_reaction_add(payload):
     Moj1p = '🖥️'
     Moj2p = '📼'
