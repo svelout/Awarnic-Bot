@@ -1,6 +1,5 @@
 from typing import Optional
 import discord
-import regcheck
 from discord.ext import commands
 from discord.ext.commands import Bot
 
