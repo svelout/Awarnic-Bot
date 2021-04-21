@@ -20,7 +20,7 @@ async def on_ready():
     for guild in bot.guilds:
         members += guild.member_count - 1
 
-    await bot.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.watching, name=str(f"на {members} участника")))
+    await bot.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.watching, name=str(f"на {members} участников")))
     print("Бот начал работать")
 
 @bot.command(name='test')
@@ -161,13 +161,14 @@ async def on_message(ctx):
 
 @bot.event
 async def on_member_join(ctx):
-    owner = bot.get_user(417714443884167177)
-    user = discord.Member
-    if not user.bot:
-        await ctx.send(f"Добро пожаловать на сервер {user.name}!")
-    else:
-        await ctx.ban()
-        await owner.send(f"Внимание, на ваш сервер был добавлен бо под именем {user.name}\n Из-за этого сработала система безопасности `bramerto_Anti-Crash\n Продолжайте, следить за сервером, в любой ситуации я вам помогу")
+    owner = ctx.get_user(417714443884167177)
+    user = discord.User
+    bot = user.bot
+    #if not bot:
+        #await ctx.send(f"Добро пожаловать на сервер {user.mention}!")
+    #else:
+        #await ctx.ban()
+        #await owner.send(f"Внимание, на ваш сервер был добавлен бот под именем {user.mention}\n Из-за этого сработала система безопасности `bramerto_Anti-Crash`\n Продолжайте, следить за сервером, а в любой ситуации я вам помогу")
 
 async def on_raw_reaction_add(payload):
     Moj1p = '🖥️'
