@@ -157,18 +157,6 @@ async def on_message(ctx):
     await Moji5.add_reaction(Mojp)
     await Moji5.add_reaction(Mojp2)
 
-
-@bot.event
-async def on_member_join(ctx):
-    owner = ctx.get_user(417714443884167177)
-    user = discord.User
-    bot = user.bot
-    #if not bot:
-        #await ctx.send(f"Добро пожаловать на сервер {user.mention}!")
-    #else:
-        #await ctx.ban()
-        #await owner.send(f"Внимание, на ваш сервер был добавлен бот под именем {user.mention}\n Из-за этого сработала система безопасности `bramerto_Anti-Crash`\n Продолжайте, следить за сервером, а в любой ситуации я вам помогу")
-
 async def on_raw_reaction_add(payload):
     Moj1p = '🖥️'
     Moj2p = '📼'
@@ -205,11 +193,11 @@ async def on_raw_reaction_add(payload):
     Moja5 = '🟠'
     Mojp = '🧍‍♀️'
     Mojp2 = '🧍‍♂️'
-    message1 = 833393450963042344
-    message2 = 833393461709111326
-    message3 = 833393473272283146
-    message4 = 833393490955599872
-    message5 = 833393519544500224
+    message1 = 835234956929531955
+    message2 = 835234967940104232
+    message3 = 835234976979091476
+    message4 = 835234998142369802
+    message5 = 835235026643582977
 
     if message1 == payload.message_id:
         member = payload.member
@@ -354,11 +342,11 @@ async def on_raw_reaction_remove(payload):
     Moja5 = '🟠'
     Mojp = '🧍‍♀️'
     Mojp2 = '🧍‍♂️'
-    message1 = 833393450963042344
-    message2 = 833393461709111326
-    message3 = 833393473272283146
-    message4 = 833393490955599872
-    message5 = 833393519544500224
+    message1 = 835234956929531955
+    message2 = 835234967940104232
+    message3 = 835234976979091476
+    message4 = 835234998142369802
+    message5 = 835235026643582977
 
     if message1 == payload.message_id:
         member = payload.member
