@@ -157,6 +157,7 @@ async def on_message(ctx):
     await Moji5.add_reaction(Mojp)
     await Moji5.add_reaction(Mojp2)
 
+@bot.event
 async def on_raw_reaction_add(payload):
     Moj1p = '🖥️'
     Moj2p = '📼'
