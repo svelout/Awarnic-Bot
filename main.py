@@ -22,16 +22,6 @@ colours = {
 
 @bot.event
 async def on_ready():
-    db = sqlite3.connect('db.sqlite')
-    cursor = db.cursor()
-    cursor.execute(
-        '''
-        CREATE TABLE IF NOT EXISTS main(
-        admin1 TEXT,
-        banned_count_members TEXT,
-        message_id TEXT
-        )
-        ''')
     guild = discord.Guild
     servers = len(bot.guilds)
     members = 0
