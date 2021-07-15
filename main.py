@@ -1,4 +1,4 @@
--1,594 +0,0 @@
+
 import random
 from random import choice
 import sqlite3
