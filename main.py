@@ -12,6 +12,7 @@ from random import randint
 intents = discord.Intents.default()
 intents.members = True
 bot = commands.Bot(command_prefix='=', intents = intents)
+status =
 
 colours = {
     "✅": 832332996253319188
@@ -29,13 +30,6 @@ async def on_ready():
         message_id TEXT
         )
         ''')
-    guild = discord.Guild
-    servers = len(bot.guilds)
-    members = 0
-    for guild in bot.guilds:
-        members += guild.member_count - 1
-
-    await bot.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.watching, name=str(f"на {members} участников")))
     print("Бот начал работать")
 
 @bot.event
@@ -62,6 +56,16 @@ async def ban(ctx,member,message, *,reason=None):
             await ctx.send("Успешно!")
         elif banned_member_count == 2:
             return await ctx.send("У вас ограничение по бану")
+ 
+@tasks.loop(seconds=3)
+async def ChangeStatus():
+    guild = discord.Guild
+    servers = len(bot.guilds)
+    members = 0
+    for guild in bot.guilds:
+        members += guild.member_count - 1
+
+    await bot.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.watching, name=str(f"на {members} участников")))
 
 @bot.command(name='invite')
 async def on_message(ctx):
