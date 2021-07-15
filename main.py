@@ -32,7 +32,7 @@ async def on_ready():
     guild = discord.Guild
     servers = len(bot.guilds)
     members = 0
-    while:
+    while a==1:
      for guild in bot.guilds:
          members += guild.member_count - 1
 
