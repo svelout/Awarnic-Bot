@@ -12,7 +12,6 @@ from random import randint
 intents = discord.Intents.default()
 intents.members = True
 bot = commands.Bot(command_prefix='=', intents = intents)
-status =
 
 colours = {
     "✅": 832332996253319188
