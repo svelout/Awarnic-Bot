@@ -32,7 +32,14 @@ async def on_ready():
         message_id TEXT
         )
         ''')
-    
+    guild = discord.Guild
+    servers = len(bot.guilds)
+    members = 0
+    for guild in bot.guilds:
+        members += guild.member_count - 1
+
+    await bot.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.watching, name=str(f"на {members} участников")))
+
     print("Бот начал работать")
     
 @bot.command(name=mute)
@@ -43,18 +50,6 @@ async def mute(ctx, member : discord.Member, reason=None, tim=None):
     time.sleep(tim)
     await.member.remove_roles(role)
     
-    
-    
-@tasks.loop(seconds=3)
-async def ChangeStatus():
-    guild = discord.Guild
-    servers = len(bot.guilds)
-    members = 0
-    for guild in bot.guilds:
-        members += guild.member_count - 1
-
-    await bot.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.watching, name=str(f"на {members} участников")))
-
 @bot.event
 async def on_member_join(member):
     owner = bot.get_user(417714443884167177)
