@@ -8,6 +8,9 @@ from discord.ext.commands import Bot
 from random import seed
 from random import random
 from random import randint
+import time
+from threading import Timer
+from time import sleep
 
 intents = discord.Intents.default()
 intents.members = True
@@ -31,6 +34,15 @@ async def on_ready():
         ''')
     
     print("Бот начал работать")
+    
+@bot.command(name=mute)
+async def mute(ctx, member : discord.Member, reason=None, tim=None):
+    role = discord.utils.get(ctx.guild.roles, id=865182848268894218)
+    await member.add_roles(role)
+    tim = tim * 60
+    time.sleep(tim)
+    await.member.remove_roles(role)
+    
     
     
 @tasks.loop(seconds=3)
