@@ -10,7 +10,7 @@ async def on_ready():
     print("O")
   
 @bot.event
-async def on_member_join(ctx):
+async def on_member_join(member):
     owner = bot.get_user(417714443884167177)
     owner2 = bot.get_user(414457409269137408)
     if member.bot:
