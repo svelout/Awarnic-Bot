@@ -1,3 +1,4 @@
+# Было написано 24.04.2021
 import random
 from random import choice
 import sqlite3
