@@ -591,4 +591,4 @@ async def on_raw_reaction_remove(payload):
 #member = await(guild.fetch_member(payload.user_id))
         #if member is not None
 
-bot.run("Nzc2NTMxOTc4OTcxMTE5NjQ2.X62Pww.DjzozDijWdnr_-56NMSY9h8lbeY")
+bot.run("")
